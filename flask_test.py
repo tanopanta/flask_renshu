@@ -7,7 +7,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route("/temp")
+@app.route("/pi-status")
 def temp():
     proc = subprocess.run(['vcgencmd', 'measure_temp'],stdout = subprocess.PIPE)
     msg_temp = proc.stdout.decode("utf8")
